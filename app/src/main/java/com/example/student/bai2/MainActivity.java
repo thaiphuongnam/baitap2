@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         addControls();
         addEvents();
+        
     }
     private void addEvents() {
         buttonC2F.setOnClickListener(new View.OnClickListener() {
