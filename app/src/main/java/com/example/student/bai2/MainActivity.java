@@ -9,8 +9,8 @@ import android.widget.EditText;
 public class MainActivity extends AppCompatActivity {
     EditText editTextFahrenheit, editTextCelsius;
     Button buttonC2F, buttonF2C, buttonClear;
-    int celsius = 0;
-    int fahrenheit = 0;
+    int c = 0;
+    int f = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,11 +23,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 try {
-                    celsius = Integer.parseInt(editTextCelsius.getText().toString());
+                    c = Integer.parseInt(editTextCelsius.getText().toString());
                 } catch (Exception ex) {
-                    celsius = 0;
+                    c = 0;
                 }
-                int result = Calculator.celsiusToFahrenheit(celsius);
+                int result = Calculator.celsiusToFahrenheit(c);
                 editTextFahrenheit.setText(String.valueOf(result));
             }
         });
@@ -35,11 +35,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 try {
-                    fahrenheit = Integer.parseInt(editTextFahrenheit.getText().toString());
+                    f = Integer.parseInt(editTextFahrenheit.getText().toString());
                 } catch (Exception ex) {
-                    fahrenheit = 0;
+                    f = 0;
                 }
-                int result = Calculator.fahrenheitToCelsius(fahrenheit);
+                int result = Calculator.fahrenheitToCelsius(f);
                 editTextCelsius.setText(String.valueOf(result));
             }
         });
@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void addControls() {
         editTextCelsius = findViewById(R.id.editTextCelsius);
-        editTextFahrenheit = findViewById(R.id.editTextCelsius);
+        editTextFahrenheit = findViewById(R.id.editTextFahrenheit);
         buttonC2F = findViewById(R.id.buttonC2F);
         buttonF2C = findViewById(R.id.buttonF2C);
         buttonClear = findViewById(R.id.buttonClear);
